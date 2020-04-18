@@ -1,5 +1,7 @@
 Convert data from JSON to Parquet or from Parquet to JSON
+
 Convert data from Avro to Parquet or from Parquet to Avro
+
 Convert data from JSON to Avro or from Avro to JSON
 
 Using Pyspark 
