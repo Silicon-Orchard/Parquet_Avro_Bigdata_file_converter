@@ -25,7 +25,7 @@ SECRET_KEY = 'v&5b0q*%w6ic0$xbp#&f1qnd0%qooe(b!w(q1k)u&kg98du6(i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["parquet2json.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["parquet2json.siliconorchard.com", "127.0.0.1"]
 
 
 # Application definition
