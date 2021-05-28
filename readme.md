@@ -6,11 +6,10 @@ Convert data from JSON to Avro or from Avro to JSON
 
 Using Pyspark 
 
-Demo Version: https://parquet2json.com
+Demo Version: https://parquet2json.siliconorchard.com/
 
 
 Developed by :
-
 
 Lead Developer: Sajib Sen https://github.com/Sen2k9 sajibsen.eee@gmail.com, sajibsen.cs@gmail.com
 
