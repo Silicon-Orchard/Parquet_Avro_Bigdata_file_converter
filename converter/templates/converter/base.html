@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>Data Conversion</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="">
+        <meta property="og:url" content="">
+        <link rel="shortcut icon" href="" type="image/x-icon">
+        <!-- Google font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet" type='text/css' media='all'>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" type="text/css" media='all'>
+
+        <style type="text/css">
+            body {
+                background-image: url({% static 'images/bg.svg' %});
+                background-position: top 50px center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+
+                color: #000000;
+                font-family: 'Montserrat', 'Open Sans', sans-serif;
+                font-weight: 300;
+                font-size: 20px;
+                line-height: 1.5;
+                padding-top: 70px;
+            }
+            nav, .footer-section {background: #00405C; box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);}
+            nav.navbar a.navbar-brand {color: #FFF; font-weight: 400;}
+            nav a, nav.navbar a.navbar-brand , .footer-section a {color: #FFFFFF;}
+            nav a:hover, nav.navbar a.navbar-brand:hover, .footer-section a:hover {color: #00ABF7; text-decoration: none;}
+            .main-section {min-height: calc(100vh - 140px); padding: 30px 0;}
+            .title {font-size: 36px;}
+            .form-wrapper {width: 480px; margin: 0 auto;}
+            .form-wrapper .form-group {display: flex;}
+            .form-wrapper .form-group label, .form-wrapper .form-group .form-field-part{float: left;}
+            .form-wrapper .form-group label {width: 175px;font-weight: 600;}
+            .form-wrapper .form-group .form-field-part{width: 302px;}
+            /*Button style*/
+            .btn-theme {
+                background-color: #457AB2;
+                border: 2px solid #457AB2;
+                box-sizing: border-box;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                color: #FFFFFF;
+                font-weight: 600;
+                padding: 8px 30px;
+                transition: all .2s ease-out;
+            }
+            .btn-theme:hover {
+                background-color: #FFFFFF;
+                border: 2px solid #457AB2;
+                color: #457AB2;
+                transition: all .2s ease-out;
+            }
+            /*Button style*/
+            /*Select field style*/
+            select {
+                /* reset */
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                /* Set new style */
+                background-image:
+                    linear-gradient(45deg, transparent 50%, gray 50%),
+                    linear-gradient(135deg, gray 50%, transparent 50%),
+                    linear-gradient(to right, #ccc, #ccc);
+                background-position:
+                    calc(100% - 20px) calc(1em + 2px),
+                    calc(100% - 15px) calc(1em + 2px),
+                    calc(100% - 2.5em) 0.5em;
+                background-size:
+                    5px 5px,
+                    5px 5px,
+                    1px 1.5em;
+                background-repeat: no-repeat;
+            }
+            select:-moz-focusring {
+                color: transparent;
+                text-shadow: 0 0 0 #000;
+            }
+            /*Select field style*/
+            /*File upload field style*/
+            .file-upload {position: relative;}
+            .file-upload input{position:absolute;top:0px;z-index: 999;opacity: 0;}
+            /*File upload field style*/
+            /*Footer style*/
+            .footer-section {box-shadow: none;color: #FFFFFF;min-height: 70px;padding: 1rem;}
+            /*Footer style*/
+
+            .captcha-stuff { 
+				  margin-left: auto;
+				  margin-right: auto;
+				  width: 40%;
+  			}
+
+            .asteriskField { display: none; }
+            /*            ul.errorlist { margin: 0; padding: 0; } 
+                        .errorlist li { background-color: red; color: white; display: block; font-size: 12px; margin: 0 0 3px; padding: 4px 5px; }*/
+            
+            .jumbotron{
+				background-color:#e9ecef85 !important;
+			}
+            /*Media style*/
+            @media only screen and (max-width: 1199px) {}
+            @media only screen and (max-width: 991px) {}
+            @media only screen and (max-width: 767px) {
+                body {font-size: 16px;}
+                .title {font-size: 28px;}
+                .form-wrapper {width: 430px;}
+                .form-wrapper .form-group label {width: 125px;}
+            }
+            @media only screen and (max-width: 575px) {
+                body {font-size: 14px;}
+                .title {font-size: 24px;}
+                .main-section {padding: 10px 0;}
+                .form-wrapper .form-group {display: block;}
+                .form-wrapper, .form-wrapper .form-group label, .form-wrapper .form-group .form-field-part{width: 100%;}
+                .form-wrapper .form-group .form-field-part{margin-bottom: 1rem;}
+            }
+            /*Media style*/
+        </style>
+
+	</head>
+	<body>
+		<!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img class="img img-fluid" src="" alt="">Data Conversion</a>
+                <!--           
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Menu 01</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Menu 02</a>
+                        </li>
+                    </ul>
+                </div>
+                -->
+            </div>
+        </nav>
+
+        <section class="main-section text-center d-flex">
+            <div class="container justify-content-center align-self-center">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="title my-3">Data Conversion</h1>
+					    {% block content %}
+
+					    {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer-section">
+                      
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-lg-left text-center">
+                        <div class="copyright-text">&copy; <a class="copyright-site-link" href="https://www.siliconorchard.com/">Silicon Orchard Ltd.</a> <script>document.write(new Date().getFullYear());</script></div>
+                    </div>
+                    <div class="col-lg-6 text-lg-right text-center">
+                        <!-- <a href="https://www.siliconorchard.com/">www.siliconorchard.com</a> -->
+                        Contact at : <a href = "mailto: kishor@siliconorchard.com">kishor@siliconorchard.com</a>
+                    </div>
+                </div>
+            </div>
+           
+        </footer>
+	</body>
+</html>
